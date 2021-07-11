@@ -7,7 +7,7 @@ game_over = False
 lives = 6
 
 
-# Display logo
+# Display logo for the first time
 clear()
 print(logo)
 
