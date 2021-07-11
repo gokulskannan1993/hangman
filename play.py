@@ -52,7 +52,7 @@ while not game_over:
     # Check for wrong guess
     if guess not in answer:
         lives -= 1
-        print("\n\nYou guessed wrong! You lost a life.\n")
+        print(f"\n\nYou guessed wrong! {guess} is not in the word. You lost a life.\n")
         if lives == 0:
             game_over = True
             print(stages[lives])
