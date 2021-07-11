@@ -1,4 +1,4 @@
-from resources import stages, WORDS, won, lost, logo
+from resources import stages, WORDS, won, lost, logo, clear
 
 
 import random
@@ -8,6 +8,7 @@ lives = 6
 
 
 # Display logo
+clear()
 print(logo)
 
 
@@ -27,12 +28,15 @@ print(f"{' '.join(display)}")
 
 # For running in loop
 while not game_over:
-
     print(stages[lives])
 
 
     # Ask for user input
     guess = input("Guess a letter: ").upper()
+    clear()
+    print(logo)
+
+
 
 
     # if the guess is previously guessed
