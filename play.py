@@ -1,4 +1,4 @@
-from resources import stages, WORDS, won, lost
+from resources import stages, WORDS, won, lost, logo
 
 
 import random
@@ -7,16 +7,21 @@ game_over = False
 lives = 6
 
 
+# Display logo
+print(logo)
+
+
 
 # Generate a random word
 answer = random.choice(WORDS).upper()
-print(answer)
 
 
 # Create blank array
 display = []
 for letter in answer:
     display += "_"
+
+print(f"{' '.join(display)}")
 
 
 
@@ -28,6 +33,11 @@ while not game_over:
 
     # Ask for user input
     guess = input("Guess a letter: ").upper()
+
+
+    # if the guess is previously guessed
+    if guess in display:
+        print(f"You have already guessed the letter '{guess}'")
 
     
 
@@ -42,9 +52,11 @@ while not game_over:
     # Check for wrong guess
     if guess not in answer:
         lives -= 1
+        print("\n\nYou guessed wrong! You lost a life.\n")
         if lives == 0:
             game_over = True
             print(stages[lives])
+            print(f"The Answer was {answer}")
             print(lost)
 
     # Print the display each time
