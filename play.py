@@ -3,7 +3,9 @@ from resources import stages, WORDS, won, lost, logo, clear
 
 import random
 
+# to flag the game is finished
 game_over = False
+
 lives = 6
 
 
